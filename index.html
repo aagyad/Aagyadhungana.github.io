@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Aagya Dhungana Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+	</head>
+	<body class="is-preload full-width">
+
+		<div id="main">
+
+			<!-- Navigation Ribbon -->
+			<!-- FIX #4: "Work" calls filterWork('all') so clicking it resets all items -->
+			<nav id="nav-ribbon">
+				<ul>
+					<li><a href="about.html">About me</a></li>
+					<li><a href="#two" onclick="filterWork('all')">Work</a></li>
+					<li><a href="passion-projects.html">Passion projects</a></li>
+				</ul>
+			</nav>
+
+			<section id="two">
+
+				<!-- FIX #2: Horizontal buttons · inherits page font · Policy added -->
+				<div class="work-filter">
+					<ul class="actions fit">
+						<li><a href="javascript:void(0)" class="button" onclick="filterWork('eo')">Earth Observation</a></li>
+						<li><a href="javascript:void(0)" class="button" onclick="filterWork('gv')">Geo-visualization</a></li>
+						<li><a href="javascript:void(0)" class="button" onclick="filterWork('carto')">Cartography</a></li>
+						<li><a href="javascript:void(0)" class="button" onclick="filterWork('policy')">Policy</a></li>
+					</ul>
+				</div>
+
+				<div class="row">
+
+					<article class="col-3 col-6-small col-12-xsmall work-item gv">
+						<a href="https://aagyad.github.io/wildatlanticsalmon.github.io/" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/Salmon_webmap.png" alt="Wild atlantic salmon" class="image fit thumb" />
+						</a>
+						<h3>Interactive and dynamic webmap</h3>
+						<p>Wild Atlantic Salmon are marked as "Near Threatened" in terms of global populations. This webmap helps to visualize the areas where the species are at high and low risk.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item gv">
+						<a href="https://www.arcgis.com/apps/dashboards/89873b54f50242ce8208a355ad0d0dae" target="_blank" class="work-link">
+							<img src="images/thumbs/Migration_Austria.png" alt="Migration map dashboard" class="image fit thumb" />
+						</a>
+						<h3>Migration map and interactive dashboard.</h3>
+						<p>Combination of 3 dynamic and static maps to show various ways to represent migration patterns in Austria.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item carto">
+						<a href="https://arcg.is/1LafiH3" target="_blank" class="work-link">
+							<img src="images/thumbs/Storymap_salmon.png" alt="Storymap of wildatlanticsalmon" class="image fit thumb" />
+						</a>
+						<h3>Storymap showing the methodology of cartography</h3>
+						<p>The storymap revolves around the theme of SDG-14 showing the processes involved to generate a cartographic map — static and dynamic.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item carto">
+						<a href="images/Salzburg_map.png" target="_blank" class="work-link">
+							<img src="images/Salzburg_map.png" alt="First day in Salzburg" class="image fit thumb" />
+						</a>
+						<h3>Sketches and maps</h3>
+						<p>The map shows self-made sketches of the specific locations and map of Salzburg derived from OSM data together.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item gv">
+						<a href="images/thumbs/Salmon_iterated_map_.png" target="_blank" class="work-link">
+							<img src="images/thumbs/Salmon_iterated_map_.png" alt="Static salmon habitat map" class="image fit thumb" />
+						</a>
+						<h3>Standalone static map showing the habitat status of the wild atlantic salmon.</h3>
+						<p>The map prepared under the theme of SDG-14 shows the habitat status of the nearly endangered species.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item eo">
+						<a href="https://aagyadh.users.earthengine.app/view/derna-flood" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/Derna.jpg" alt="Derna Flood Visualization" class="image fit thumb" />
+						</a>
+						<h3>Visualization of Derna flood using GEE</h3>
+						<p>A deadly flooding and devastation occurred in Derna, Libya in 2023 September 10th and 11th followed by Storm Daniel. The GEE app allows the user to visualize the flooding in Derna.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item eo">
+						<a href="images/Presentation.pdf" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/Flood_map.jpg" alt="Open Flood mapping services" class="image fit thumb" />
+						</a>
+						<h3>Open and commercial flood mapping services</h3>
+						<p>The presentation compares multiple open and commercial flood mapping services.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item gv">
+						<a href="https://www.arcgis.com/apps/dashboards/e82f44261aa148168b314feda579a52e" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/PW_dashboard.jpg" alt="Plastic waste dashboard" class="image fit thumb" />
+						</a>
+						<h3>Plastic leakage hotspot interactive dashboard</h3>
+						<p>The map illustrates the distribution of plastic debris accumulation by utilizing spatial analysis techniques and visualization concepts.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item carto">
+						<a href="https://www.urfieldlab.com/UR2024/vintage-map-of-kathmandu-valley-project-climate-atlas" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/Vintage_map.jpg" alt="Vintage map of Kathmandu valley" class="image fit thumb" />
+						</a>
+						<h3>Vintage map of Kathmandu valley, Project climate atlas</h3>
+						<p>The landcover map of Kathmandu valley-2010 uses unique cartographic symbols for the land cover representation.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item carto">
+						<a href="https://projectcap.creasion.org/real-time-data" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/Plasticwaste_map.jpg" alt="Plastic waste hotspots" class="image fit thumb" />
+						</a>
+						<h3>Plastic waste hotspots and composition dashboard</h3>
+						<p>The dashboard provides the scenario of the plastic waste and its composition as one of the major deliverables of the project CAP.</p>
+					</article>
+
+					<article class="col-3 col-6-small col-12-xsmall work-item policy">
+						<a href="images/Combined_mapbook.pdf" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/thumbs/Mapbook_thumbnail.png" alt="Plastic waste hotspots" class="image fit thumb" />
+						</a>
+						<h3>Municipal plastic waste mapbook</h3>
+						<p>The mapbook was developed for municipalities as one of the major deliverables of the project CAP.</p>
+					</article>
+
+					
+					<article class="col-3 col-6-small col-12-xsmall work-item policy">
+						<a href="images/Air Pollution policy Brief.pdf" target="_blank" rel="noopener noreferrer" class="work-link">
+							<img src="images/thumbs/Air_pollution_thumbnails.png" alt=" air pollution brief" class="image fit thumb" />
+						</a>
+						<h3>Air pollution policy brief</h3>
+						<p>The policy brief was developed due to incrasing air pollution situation during my work in Nepal.</p>
+					</article>
+					<!-- Add policy items here with class="work-item policy" -->
+
+				</div>
+			</section>
+
+			
+		<section id="conferences">
+				<h2>Conferences</h2>
+					<div class="conference-grid">
+
+							<div class="conference-card">
+						<a href="certificates/ISSonVIS2026_Dhungana_Aagya_report.pdf" target="_blank" class="conf-image">
+							<!-- Replace src with your conference photo -->
+							<img src="certificates/ISS_viz_png.png" target="_blank" width="100%" height="500px" type="application/pdf"></lt="Conference placeholder" />
+							</a>
+						<div class="conf-body">
+							<span class="conf-tag">International</span>
+							<h3>International Spring School on Visualization — Olomouc, Czechia</h3>
+							<p class="conf-date">April 2026</p>
+							<p>Participated to learn Emotions and Map: the affective dimension of visualization </p>
+						</div>
+					</div>
+
+
+						<div class="conference-card">
+						<a href="certificates/UR_Aagya Dhungana.pdf" target="_blank" class="conf-image">
+							<!-- Replace src with your conference photo -->
+							<img src="certificates/UR_Aagya Dhungana_png.png" target="_blank" width="100%" height="500px" type="application/pdf"></lt="Conference placeholder" />
+							</a>
+						<div class="conf-body">
+							<span class="conf-tag">International</span>
+							<h3>Understanding Risk Field Lab — Kathmandu,Nepal</h3>
+							<p class="conf-date">May 2025</p>
+							<p>A one month un-conference on himalayan climate data </p>
+						</div>
+					</div>
+
+					<div class="conference-card">
+						<a href="certificates/ESCAP.jpg" target="_blank" class="conf-image">
+							<!-- Replace src with your conference photo -->
+							<img src="certificates/ESCAP.jpg" target="_blank" width="100%" height="500px" type="application/pdf"></lt="Conference placeholder" />
+							
+							</a>
+						<div class="conf-body">
+							<span class="conf-tag">Learning</span>
+							<h3>Cities and Marine:Plastic Pollution: Building Circular Economy</h3>
+							<p class="conf-date">August 2023</p>
+							<p>Learnt about building circular economy along with mapping plastics from space</p>
+						</div>
+					</div> 
+
+					<div class="conference-card">
+						<a href="certificates/IAHR.png" target="_blank" class="conf-image">
+							<!-- Replace src with your conference photo -->
+							<img src="certificates/IAHR.png" target="_blank" width="100%" height="500px" type="application/pdf"></lt="Conference placeholder" />
+						</a>
+						<div class="conf-body">
+							<span class="conf-tag">International</span>
+							<h3>IAHR — Kathmandu, Nepal</h3>
+							<p class="conf-date">November 2021</p>
+							<p>Moderated one of the technical sessions of the conference.</p>
+						</div>
+					</div>
+
+					<!-- Conference Card 2 — placeholder -->
+					<div class="conference-card">
+						<a href="certificates/Cartography._Certificate_04072022.pdf" target="_blank" class="conf-image"> -->
+							<img src="certificates/Carto_png.png" alt="Conference placeholder" target="_blank"/>
+						 </a>
+						<div class="conf-body">
+							<span class="conf-tag">Learning</span>
+							<h3>ESRI — Cartography</h3>
+							<p class="conf-date">April 2022</p>
+							<p>Learnt basics of cartography, essential visual variables and its implementation.</p>
+						</div>
+					</div>
+
+					<!-- Add more conference cards by copying a block above -->
+
+				</div>
+			</section>
+
+<!-- FIX #3: Organizations section
+			     Add your logo images inside .org-logos — they auto-recolor to
+			     forest green and shift to terracotta on hover via CSS filter. -->
+			<section id="organizations">
+				<h3>Past affliations</h3>
+				
+				<div class="org-logos">
+					<img src="images/logos/PLEASE"           alt="PLEASE" />
+					<img src="images/logos/AIT.png"           alt="AIT" />
+					<img src="images/logos/creasion.png"        alt="EU" />
+					<img src="images/logos/BC.png" alt="British Council" />
+					<img src="images/logos/UNDP.png"             alt="Asian Institute of Technology" />
+					<img src="images/logos/GoN.png"             alt="Asian Institute of Technology" />
+					<img src="images/logos/UNOPs.png"             alt="Asian Institute of Technology" />
+					<img src="images/logos/HUC_KU.png"             alt="Asian Institute of Technology" />
+					<img src="images/logos/Project_CAP.png"             alt="ProjectCAP" />
+
+					<img src="images/logos/KOICA.png"             alt="Asian Institute of Technology" />
+					-->
+				</div>
+			</section>
+		</div><!-- #main -->
+
+		<script>
+			// FIX #2 & #4
+			// filterWork('all')  → shows every work item (called by Work nav link)
+			// filterWork('eo')   → shows only that category
+			function filterWork(category) {
+				var items = document.getElementsByClassName('work-item');
+				var buttons = document.querySelectorAll('.work-filter .button');
+
+				buttons.forEach(function(btn) { btn.classList.remove('active'); });
+
+				for (var i = 0; i < items.length; i++) {
+					items[i].style.display = (category === 'all' || items[i].classList.contains(category))
+						? 'block' : 'none';
+				}
+
+				// Highlight the clicked filter button (not the nav link)
+				if (event && event.target && event.target.classList.contains('button')) {
+					event.target.classList.add('active');
+				}
+			}
+		</script>
+
+		<footer id="footer-connect">
+			<div class="inner">
+				<h3>Let's Connect</h3>
+				<ul class="icons">
+					<li><a href="mailto:aagya.dhungana@stud.plus.ac.at" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://www.linkedin.com/in/aagya-dhungana/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/aagyad?tab=repositories" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://instagram.com/aagyadhungana__" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project Bi-Pad — Aagya Dhungana</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<style>
+			/* Hide nav on blog pages */
+			#nav-ribbon { display: none; }
+
+			/* ── Brochure Slideshow — full width ── */
+			.brochure-viewer {
+				margin: 2.5em 0;
+				width: 100%;
+				position: relative;
+			}
+
+			.brochure-track {
+				position: relative;
+				width: 100%;
+				border: 1px solid var(--color-border, #E4DDD6);
+				border-radius: 6px 6px 0 0;
+				overflow: hidden;
+				box-shadow: 0 4px 18px rgba(45,106,79,0.12);
+				background: #fff;
+			}
+
+			/* Each slide */
+			.brochure-slide {
+				display: none;
+				width: 100%;
+				position: relative;
+			}
+			.brochure-slide.active {
+				display: block;
+			}
+			.brochure-slide img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			/* Progress bar — animates during auto-advance */
+			.brochure-progress {
+				height: 3px;
+				background: var(--color-border, #E4DDD6);
+				position: relative;
+				overflow: hidden;
+			}
+			.brochure-progress-bar {
+				height: 100%;
+				background: var(--color-primary, #2D6A4F);
+				width: 0%;
+				transition: width linear;
+			}
+
+			/* Left / Right arrow buttons overlaid on image */
+			.brochure-arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background: rgba(45, 106, 79, 0.80);
+				color: #fff;
+				border: none;
+				border-radius: 3px;
+				width: 42px;
+				height: 60px;
+				font-size: 1.3rem;
+				cursor: pointer;
+				z-index: 10;
+				transition: background 0.2s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
+			}
+			.brochure-arrow:hover {
+				background: rgba(30, 77, 56, 0.95);
+			}
+			.brochure-arrow.left  { left:  14px; }
+			.brochure-arrow.right { right: 14px; }
+			.brochure-arrow:disabled {
+				background: rgba(150,150,150,0.35);
+				cursor: not-allowed;
+			}
+
+			/* Bottom bar */
+			.brochure-bar {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.7em 1.2em;
+				background: #faf7f4;
+				border: 1px solid var(--color-border, #E4DDD6);
+				border-top: none;
+				border-radius: 0 0 6px 6px;
+			}
+
+			/* Dots */
+			.brochure-dots {
+				display: flex;
+				gap: 7px;
+				align-items: center;
+			}
+			.brochure-dot {
+				width: 9px; height: 9px;
+				border-radius: 50%;
+				background: #ccc;
+				cursor: pointer;
+				transition: background 0.2s, transform 0.2s;
+				border: none;
+				padding: 0;
+			}
+			.brochure-dot.active {
+				background: var(--color-accent, #C1694F);
+				transform: scale(1.3);
+			}
+
+			/* Counter + pause button */
+			.brochure-meta {
+				display: flex;
+				align-items: center;
+				gap: 0.8em;
+			}
+			.brochure-counter {
+				font-size: 0.78rem;
+				color: var(--color-muted, #6B7070);
+			}
+			.brochure-pause {
+				background: none;
+				border: 1px solid var(--color-primary, #2D6A4F);
+				border-radius: 3px;
+				color: var(--color-primary, #2D6A4F);
+				font-size: 0.72rem;
+				font-family: inherit;
+				padding: 0.25em 0.7em;
+				cursor: pointer;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+				transition: background 0.2s, color 0.2s;
+			}
+			.brochure-pause:hover {
+				background: var(--color-primary, #2D6A4F);
+				color: #fff;
+			}
+
+			/* Inline funding image */
+			.blog-imgbody {
+				margin: 1.5em 0;
+				border-radius: 5px;
+				overflow: hidden;
+				border: 1px solid var(--color-border, #E4DDD6);
+			}
+			.blog-imgbody img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="is-preload full-width">
+
+		<div id="main">
+
+			<nav id="nav-ribbon">
+				<ul>
+					<li><a href="about.html">About me</a></li>
+					<li><a href="index.html">Work</a></li>
+					<li><a href="passion-projects.html">Passion projects</a></li>
+				</ul>
+			</nav>
+
+			<article class="blog-post">
+
+				<a href="passion-projects.html" class="blog-back">← Back to Passion Projects</a>
+
+				<!-- Hero image -->
+				<div class="blog-hero">
+					<img src="images/passion_project/Bipad/bipad_thumb.png" alt="Project Bi-Pad" />
+				</div>
+
+				<div class="blog-content">
+
+					<header class="blog-header">
+						<span class="blog-tag">Startup &amp; Leadership</span>
+						<h1>Project Bi-Pad: Women Empowerment and Beyond</h1>
+						<p class="blog-meta">Founded 2022 &nbsp;·&nbsp; Funded by KOICA &nbsp;·&nbsp; Rural Nepal&nbsp;· Social Entrepreneurship</p>
+					</header>
+
+					<div class="blog-body">
+
+						<h2>About the Project</h2>
+						<p>
+							Project Bi-Pad was established in 2022 with a primary aim to provide women the
+							freedom to have their periods in a safe, hygienic manner and to promote
+							sustainability through empowerment. Bi-Pad is a biodegradable, reusable,
+							and affordable sanitary pad — designed to be the best match for menstruating
+							women in rural Nepal, where access to commercial hygiene products remains
+							out of reach for most.
+						</p>
+
+						<!-- Funding photo -->
+						<div class="blog-imgbody">
+							<img src="images/passion_project/Bipad/Bipad_funding.jpg" alt="Receiving KOICA funding for Project Bi-Pad" />
+						</div>
+
+						<h2>The Problem</h2>
+						<p>
+							Menstrual hygiene has long been a neglected issue in economically marginalised
+							communities of Nepal. Women are bound to use non-sterile rags and mattress
+							cuttings to manage their menstrual flow — not out of choice, but out of
+							necessity and silence. The goal of this initiative was to break the taboo
+							around menstruation, raise awareness, and make reusable hygienic sanitary
+							pads accessible specifically for rural women. Where women are generally
+							denied ownership of property, control over assets, and the ability to earn
+							outside income, Bi-Pad gives them the freedom to be independent and make
+							their own choices.
+						</p>
+
+						<h2>Our Objectives</h2>
+						<p>
+							We create an environment for women to work, empowering them and helping them
+							produce their own menstrual products. Through this, we bring sustainability
+							into our approach — leading to women's empowerment through employment.
+							Bi-Pad works to tackle the very issue of menstrual hygiene management by
+							raising awareness about menstruation and promoting the use of green
+							alternatives. Specifically, we aimed to:
+						</p>
+						<ul style="font-size:0.92rem; line-height:1.9; color:#444; padding-left:1.5em; margin-bottom:1.5em;">
+							<li>Provide user-friendly, environment-friendly, reusable sanitary pads at affordable prices.</li>
+							<li>Increase awareness among girls and women on menstrual hygiene and safe use of sanitary pads.</li>
+							<li>Provide economic empowerment to rural women through training and awareness campaigns.</li>
+						</ul>
+						<h2>Check out our brochure</h2>
+						<!-- ════════════════════════════════════════════
+						     BROCHURE SLIDESHOW
+						     Place your 4 images at these paths:
+						     images/passion_project/Bipad/Brochure_page_one_page-0001.jpg
+						     images/passion_project/Bipad/Brochure_page_three_four_page-0001.jpg
+						     images/passion_project/Bipad/Brochure_page_five_six_page-0001.jpg
+						     images/passion_project/Bipad/Brochure_page_seven_eight_page-0001.jpg
+						     ════════════════════════════════════════════ -->
+						<div class="brochure-viewer" id="brochureViewer">
+
+							<div class="brochure-track">
+
+								<!-- Left arrow -->
+								<button class="brochure-arrow left" id="brochurePrev" onclick="brochureNav(-1)" disabled>&#8249;</button>
+
+								<!-- Slide 1 -->
+								<div class="brochure-slide active">
+									<img src="images/passion_project/Bipad/Brochure_page_one_page-0001.jpg"
+									     alt="Brochure — pages 1 &amp; 2" />
+								</div>
+
+								<!-- Slide 2 -->
+								<div class="brochure-slide">
+									<img src="images/passion_project/Bipad/Brochure_page_three_four_page-0001.jpg"
+									     alt="Brochure — pages 3 &amp; 4" />
+								</div>
+
+								<!-- Slide 3 -->
+								<div class="brochure-slide">
+									<img src="images/passion_project/Bipad/Brochure_page_five_six_page-0001.jpg"
+									     alt="Brochure — pages 5 &amp; 6" />
+								</div>
+
+								<!-- Slide 4 -->
+								<div class="brochure-slide">
+									<img src="images/passion_project/Bipad/Brochure_page_seven_eight_page-0001.jpg"
+									     alt="Brochure — pages 7 &amp; 8" />
+								</div>
+
+								<!-- Right arrow -->
+								<button class="brochure-arrow right" id="brochureNext" onclick="brochureNav(1)">&#8250;</button>
+
+							</div><!-- .brochure-track -->
+
+							<!-- Progress bar -->
+							<div class="brochure-progress">
+								<div class="brochure-progress-bar" id="brochureBar"></div>
+							</div>
+
+							<!-- Bottom bar: dots + counter + pause -->
+							<div class="brochure-bar">
+								<div class="brochure-dots" id="brochureDots">
+									<button class="brochure-dot active" onclick="brochureGoTo(0)"></button>
+									<button class="brochure-dot"        onclick="brochureGoTo(1)"></button>
+									<button class="brochure-dot"        onclick="brochureGoTo(2)"></button>
+									<button class="brochure-dot"        onclick="brochureGoTo(3)"></button>
+								</div>
+								<div class="brochure-meta">
+									<span class="brochure-counter">
+										Page <span id="bCurr">1</span> of <span id="bTotal">4</span>
+									</span>
+									<button class="brochure-pause" id="brochurePauseBtn" onclick="brochureTogglePause()">⏸ Pause</button>
+								</div>
+							</div>
+
+						</div>
+						<!-- ════════ END BROCHURE ════════ -->
+
+						<h2>What I Learned</h2>
+						<p>
+							Running Bi-Pad working closely with women taught me that the most powerful interventions treat people
+							as capable, not as recipients. Every woman who learned to make her own pad
+							didn't just gain a hygienic product — she gained confidence, a skill, and a
+							new way of thinking about her own body and rights. That quiet, personal shift
+							felt like the real success of the project. I carry that lesson into
+							everything I build now.
+						</p>
+
+					</div><!-- .blog-body -->
+				</div><!-- .blog-content -->
+			</article>
+		</div><!-- #main -->
+
+		<footer id="footer-connect">
+			<div class="inner">
+				<h3>Let's Connect</h3>
+				<ul class="icons">
+					<li><a href="mailto:aagya.dhungana@stud.plus.ac.at" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://www.linkedin.com/in/aagya-dhungana/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/aagyad?tab=repositories" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://instagram.com/aagyadhungana__" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script>
+			var bIdx     = 0;
+			var bSlides  = document.querySelectorAll('.brochure-slide');
+			var bDots    = document.querySelectorAll('.brochure-dot');
+			var bCount   = bSlides.length;
+			var bPaused  = false;
+			var bTimer   = null;
+			var bInterval = 10000;   // ms between auto-advances
+			var bBar     = document.getElementById('brochureBar');
+
+			document.getElementById('bTotal').textContent = bCount;
+
+			// ── Render a specific slide ──
+			function brochureGoTo(idx) {
+				if (idx < 0 || idx >= bCount) return;
+
+				bSlides[bIdx].classList.remove('active');
+				bDots[bIdx].classList.remove('active');
+				bIdx = idx;
+				bSlides[bIdx].classList.add('active');
+				bDots[bIdx].classList.add('active');
+				document.getElementById('bCurr').textContent = bIdx + 1;
+
+				document.getElementById('brochurePrev').disabled = (bIdx === 0);
+				document.getElementById('brochureNext').disabled = (bIdx === bCount - 1);
+
+				// Restart progress bar animation
+				bBar.style.transition = 'none';
+				bBar.style.width = '0%';
+				// Trigger reflow so the reset registers before new animation
+				void bBar.offsetWidth;
+				if (!bPaused) {
+					bBar.style.transition = 'width ' + bInterval + 'ms linear';
+					bBar.style.width = '100%';
+				}
+			}
+
+			// ── Arrow clicks ──
+			function brochureNav(dir) {
+				clearTimeout(bTimer);
+				var next = bIdx + dir;
+				// When clicking next on last slide, wrap to first
+				if (next >= bCount) next = 0;
+				if (next < 0) next = bCount - 1;
+				brochureGoTo(next);
+				if (!bPaused) brochureSchedule();
+			}
+
+			// ── Schedule next auto-advance ──
+			function brochureSchedule() {
+				clearTimeout(bTimer);
+				bTimer = setTimeout(function () {
+					var next = (bIdx + 1) % bCount;
+					brochureGoTo(next);
+					brochureSchedule();
+				}, bInterval);
+			}
+
+			// ── Pause / Resume ──
+			function brochureTogglePause() {
+				bPaused = !bPaused;
+				var btn = document.getElementById('brochurePauseBtn');
+				if (bPaused) {
+					clearTimeout(bTimer);
+					bBar.style.transition = 'none';
+					bBar.style.width = '0%';
+					btn.textContent = '▶ Resume';
+				} else {
+					btn.textContent = '⏸ Pause';
+					brochureGoTo(bIdx);   // restart bar
+					brochureSchedule();
+				}
+			}
+
+			// ── Keyboard arrows ──
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'ArrowRight') brochureNav(1);
+				if (e.key === 'ArrowLeft')  brochureNav(-1);
+			});
+
+			// ── Pause on hover, resume on leave ──
+			var viewer = document.getElementById('brochureViewer');
+			viewer.addEventListener('mouseenter', function () {
+				if (!bPaused) {
+					clearTimeout(bTimer);
+					bBar.style.transition = 'none';
+				}
+			});
+			viewer.addEventListener('mouseleave', function () {
+				if (!bPaused) {
+					brochureGoTo(bIdx);
+					brochureSchedule();
+				}
+			});
+
+			// ── Start ──
+			brochureGoTo(0);
+			brochureSchedule();
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,565 @@
+/* ============================================================
+   DESIGN TOKENS — Earthy: Forest Green + Terracotta
+   #2D6A4F  forest green  → structure, borders, markers, buttons
+   #C1694F  terracotta    → icons, highlights, hover accents
+   ============================================================ */
+:root {
+    --color-primary:      #2D6A4F;
+    --color-primary-dark: #1E4D38;
+    --color-accent:       #C1694F;
+    --color-accent-light: #D4876E;
+    --color-text:         #2C2C2C;
+    --color-muted:        #6B7070;
+    --color-border:       #E4DDD6;
+    --color-bg:           #FFFFFF;
+    --color-pink:         #2D6A4F;
+}
+
+/* ============================================================
+   NAV RIBBON
+   ============================================================ */
+#nav-ribbon {
+    background: #ffffff;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    width: 100%;
+    border-bottom: none;
+    padding: 0.5em 0;
+}
+#nav-ribbon ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0; padding: 0;
+}
+#nav-ribbon > ul > li {
+    display: inline-block;
+    margin-left: 2em;
+    position: relative;
+}
+#nav-ribbon a {
+    text-decoration: none;
+    color: #4b4b4b;
+    font-weight: 400;
+    border-bottom: none;
+    transition: color 0.2s;
+}
+#nav-ribbon a:hover { color: var(--color-primary) !important; }
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+#main { padding-top: 0.5em !important; }
+#one { border-top: none; margin-bottom: 1em; padding-top: 0; }
+#one p { font-size: 1.1rem; margin-bottom: 0.1em; color: #444; }
+
+body.full-width #header { display: none; }
+body.full-width #main {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 4em 2em;
+}
+
+/* ============================================================
+   GLOBAL LINK HOVER
+   ============================================================ */
+a:hover {
+    border-bottom-color: transparent;
+    color: var(--color-accent) !important;
+    text-decoration: none;
+}
+
+/* ============================================================
+   PROFILE IMAGE
+   ============================================================ */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+.profile-border {
+    border: 5.5px solid var(--color-primary-dark);
+    padding: 0;
+    line-height: 0;
+    display: inline-block;
+}
+
+/* ============================================================
+   SOCIAL ICONS
+   ============================================================ */
+.icons a {
+    color: var(--color-pink) !important;
+    transition: color 0.2s, transform 0.2s;
+}
+.icons a:hover {
+    color: var(--color-accent) !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   UNIVERSITY LOGO STRIP  [FIX #1]
+   
+   The sidebar (#header) has padding:4em which means flex children
+   are inset from the edges. We need the strip to break OUT of
+   that padding and sit flush against the bottom edge.
+   
+   Solution: use negative horizontal margins to cancel the 4em
+   padding on each side, and negative bottom margin to sit at 
+   the very bottom of the sidebar. position:relative on #header
+   is already handled (it's position:fixed).
+   ============================================================ */
+.university-strip {
+    position: static;
+    width: calc(100% + 8em + 2%);
+    margin-left: calc(-4em - 2%);
+    margin-right: -4em;
+    margin-bottom: -4em;     /* pull flush to bottom edge */
+    background: #ffffff;
+    padding: 20px 2em 20px;
+    border-top: none;
+    height: auto;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+.header-images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.header-images img {
+    max-height: 52px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(20%) brightness(0.95);
+}
+
+/* ============================================================
+   FOOTER / CONNECT SECTION — centered on work & passion pages
+   ============================================================ */
+#footer-connect {
+    padding: 4em 0;
+    text-align: center;   /* FIX #5: centered */
+    background: transparent;
+    border-top: 1px solid var(--color-border);
+}
+#footer-connect h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #444;
+}
+#footer-connect .icons {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    padding: 0;
+}
+#footer-connect .icons li { padding-right: 1.5em; }
+
+/* ============================================================
+   TIMELINE — Education / Experience
+   ============================================================ */
+.scrollable-column {
+    position: relative;
+    padding-left: 1.5em;
+    border-left: 2px dotted #ccc;
+    margin-left: 10px;
+}
+.scrollable-column article::before {
+    content: '\f3c5';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    padding: 2px 0;
+    font-size: 15px;
+    left: -8.8px;
+    background: #ffffff;
+    color: var(--color-primary);
+    filter: grayscale(20%);
+}
+.scrollable-column h3 { font-size: 1rem; margin-bottom: 0.1em; color: #444; }
+.scrollable-column h4 { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.5em; color: var(--color-muted); }
+.scrollable-column p, .scrollable-column ul { font-size: 0.85rem; margin-top: 0; }
+
+/* ============================================================
+   RESEARCH SECTION
+   ============================================================ */
+#research h4 {
+    font-size: 1rem; margin-bottom: 0.2em; position: relative;
+    padding-left: 1.5em; font-weight: 400; padding-top: 0.1em;
+}
+#research p {
+    font-size: 0.85rem; margin-bottom: 0.1em; color: var(--color-muted);
+    padding-left: 2.5em; margin-top: -7px; line-height: 1.4;
+    padding-bottom: 0.2em; padding-top: 0.1em;
+}
+#research article { margin-top: 0.2em; list-style-type: none; position: relative; padding-bottom: 0; padding-top: 0; }
+#research li { list-style-type: none; position: relative; padding-bottom: 0.5em; padding-top: 0.8em; }
+#research li::before {
+    content: '\f3c5'; font-family: "Font Awesome 5 Free"; font-weight: 900;
+    font-size: 14px; position: absolute; padding: 2px 0; left: -16px;
+    background: #ffffff; color: var(--color-primary); filter: grayscale(20%);
+}
+
+/* ============================================================
+   WORK FILTER BUTTONS  [FIX #3: no underline]
+   ============================================================ */
+.work-filter { margin-bottom: 2.5em; text-align: center; }
+.work-filter .actions {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65em;
+    list-style: none;
+    margin: 0 !important; padding: 0;
+}
+.work-filter .actions li { margin: 0; }
+.work-filter .button {
+    font-family: inherit !important;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary) !important;
+    background: transparent;
+    border: 1.5px solid var(--color-primary) !important;
+    border-radius: 3px;
+    padding: 0.45em 1.4em;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-decoration: none !important;  /* FIX #3: remove underline */
+    border-bottom: 1.5px solid var(--color-primary) !important; /* override global a hover */
+    transition: background 0.2s, color 0.2s;
+}
+.work-filter .button:hover,
+
+.work-filter .button.active {
+    background: var(--color-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--color-primary) !important;
+}
+
+/* ============================================================
+   WORK ITEMS — zoom on hover  [FIX #2]
+   ============================================================ */
+.work-item {
+    overflow: hidden;
+}
+.work-item .image.fit {
+    overflow: hidden;
+    display: block;
+}
+.work-item .image.fit img {
+    transition: transform 0.35s ease;
+    display: block;
+    width: 100%;
+}
+.work-item:hover .image.fit img {
+    transform: scale(1.06);
+}
+
+/* ============================================================
+   ORGANIZATIONS SECTION
+   ============================================================ */
+#organizations {
+    margin-top: 3.5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--color-border);
+}
+#organizations h3 { margin-bottom: 1.8em; color: var(--color-text); }
+
+.org-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em 3.5em;
+}
+.org-logos img {
+    max-height: 100px;
+    max-width: 130px;
+    width: auto;
+    object-fit: contain;
+}
+    /* filter: brightness(0) saturate(100%)
+            invert(30%) sepia(45%) saturate(550%)
+            hue-rotate(115deg) brightness(82%);
+    opacity: 0.80;
+    transition: opacity 0.25s, filter 0.25s;
+}
+.org-logos img:hover {
+    opacity: 1;
+    filter: brightness(0) saturate(100%)
+            invert(45%) sepia(55%) saturate(480%)
+            hue-rotate(338deg) brightness(93%);
+} */
+
+/* ============================================================
+   CONFERENCES SECTION
+   ============================================================ */
+#conferences {
+    margin-top: 3.5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--color-border);
+}
+#conferences h2 {
+    margin-bottom: 1.5em;
+    color: var(--color-text);
+}
+.conference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.8em;
+}
+.conference-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(45,106,79,0.07);
+    transition: box-shadow 0.22s, transform 0.22s;
+    display: flex;
+    flex-direction: column;
+}
+.conference-card:hover {
+    box-shadow: 0 6px 20px rgba(45,106,79,0.14);
+    transform: translateY(-3px);
+}
+.conference-card .conf-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: block;
+}
+.conference-card .conf-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.32s;
+}
+.conference-card:hover .conf-image img { transform: scale(1.05); }
+.conference-card .conf-body {
+    padding: 1.1em 1.3em 1.3em;
+    flex: 1; display: flex; flex-direction: column;
+}
+.conference-card .conf-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+.conference-card h3 {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    margin-bottom: 0.4em;
+    line-height: 1.4;
+}
+.conference-card .conf-date {
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    margin-bottom: 0.6em;
+}
+.conference-card p {
+    font-size: 0.83rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+    margin: 0;
+}
+
+/* ============================================================
+   PASSION PROJECTS PAGE — dot + topo texture  [FIX #4]
+   ============================================================ */
+#main.passion-bg {
+    background-color: #faf7f4;
+    background-image:
+        /* Fine dot grid */
+        radial-gradient(circle, rgba(193,105,79,0.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(45,106,79,0.10) 1px, transparent 1px);
+    background-size: 28px 28px, 14px 14px;
+    background-position: 0 0, 7px 7px;
+    position: relative;
+}
+
+/* Topographic SVG overlay — decorative map icons  [FIX #4] */
+#main.passion-bg::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' opacity='0.045'%3E%3C!-- Topo contour lines --%3E%3Cellipse cx='450' cy='350' rx='380' ry='240' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cellipse cx='450' cy='350' rx='300' ry='185' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cellipse cx='450' cy='350' rx='220' ry='130' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cellipse cx='450' cy='350' rx='140' ry='75' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cellipse cx='450' cy='350' rx='60' ry='30' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3C!-- Small secondary contours top-left --%3E%3Cellipse cx='100' cy='100' rx='80' ry='55' fill='none' stroke='%23C1694F' stroke-width='1'/%3E%3Cellipse cx='100' cy='100' rx='50' ry='33' fill='none' stroke='%23C1694F' stroke-width='1'/%3E%3Cellipse cx='100' cy='100' rx='22' ry='14' fill='none' stroke='%23C1694F' stroke-width='1'/%3E%3C!-- Bottom-right contours --%3E%3Cellipse cx='800' cy='600' rx='90' ry='65' fill='none' stroke='%232D6A4F' stroke-width='1'/%3E%3Cellipse cx='800' cy='600' rx='55' ry='38' fill='none' stroke='%232D6A4F' stroke-width='1'/%3E%3Cellipse cx='800' cy='600' rx='24' ry='16' fill='none' stroke='%232D6A4F' stroke-width='1'/%3E%3C!-- Compass rose (top-right) --%3E%3Cg transform='translate(810,80)'%3E%3Cline x1='0' y1='-28' x2='0' y2='28' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cline x1='-28' y1='0' x2='28' y2='0' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cline x1='-20' y1='-20' x2='20' y2='20' stroke='%232D6A4F' stroke-width='0.7' stroke-dasharray='2,3'/%3E%3Cline x1='20' y1='-20' x2='-20' y2='20' stroke='%232D6A4F' stroke-width='0.7' stroke-dasharray='2,3'/%3E%3Ccircle cx='0' cy='0' r='4' fill='none' stroke='%232D6A4F' stroke-width='1.2'/%3E%3Cpolygon points='0,-28 -5,-12 0,-18 5,-12' fill='%232D6A4F'/%3E%3Ctext x='0' y='-32' text-anchor='middle' font-size='10' fill='%232D6A4F' font-family='serif'%3EN%3C/text%3E%3C/g%3E%3C!-- Scale bar (bottom-left) --%3E%3Cg transform='translate(40,640)'%3E%3Crect x='0' y='0' width='60' height='7' fill='%232D6A4F'/%3E%3Crect x='60' y='0' width='60' height='7' fill='none' stroke='%232D6A4F' stroke-width='1'/%3E%3Cline x1='0' y1='10' x2='120' y2='10' stroke='%232D6A4F' stroke-width='0.8'/%3E%3Ctext x='0' y='22' font-size='9' fill='%232D6A4F' font-family='serif'%3E0%3C/text%3E%3Ctext x='55' y='22' font-size='9' fill='%232D6A4F' font-family='serif'%3E50km%3C/text%3E%3Ctext x='108' y='22' font-size='9' fill='%232D6A4F' font-family='serif'%3E100%3C/text%3E%3C/g%3E%3C!-- Dashed route lines --%3E%3Cpath d='M 150 500 Q 300 200 500 300 Q 650 400 750 150' fill='none' stroke='%23C1694F' stroke-width='1.2' stroke-dasharray='6,5'/%3E%3C!-- Arrow at end of route --%3E%3Cpolygon points='750,150 740,165 756,162' fill='%23C1694F' opacity='0.6'/%3E%3C!-- Map pin markers --%3E%3Ccircle cx='300' cy='220' r='5' fill='none' stroke='%232D6A4F' stroke-width='1.5'/%3E%3Ccircle cx='300' cy='220' r='2' fill='%232D6A4F'/%3E%3Ccircle cx='580' cy='420' r='5' fill='none' stroke='%23C1694F' stroke-width='1.5'/%3E%3Ccircle cx='580' cy='420' r='2' fill='%23C1694F'/%3E%3Ccircle cx='700' cy='280' r='5' fill='none' stroke='%232D6A4F' stroke-width='1.5'/%3E%3Ccircle cx='700' cy='280' r='2' fill='%232D6A4F'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Keep content above the overlay */
+#main.passion-bg > * { position: relative; z-index: 1; }
+
+/* Section headings */
+#Leadership h2, #Opinions h2 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.4em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.02em;
+}
+
+/* 2-column equal grid */
+.passion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin-bottom: 3em;
+}
+
+/* Card shell */
+.passion-card {
+    background: #f8efde;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(45,106,79,0.08);
+    transition: box-shadow 0.22s, transform 0.22s;
+    display: flex;
+    flex-direction: column;
+}
+.passion-card:hover {
+    box-shadow: 0 8px 24px rgba(45,106,79,0.16);
+    transform: translateY(-4px);
+}
+.passion-card .card-image {
+    display: block; width: 100%;
+    aspect-ratio: 16 / 9; overflow: hidden;
+    position: center;
+}
+.passion-card .card-image img {
+    width: 95%; height: 95%;
+    object-fit: cover; display: block;
+    transition: transform 0.32s;
+}
+.passion-card:hover .card-image img { transform: scale(1.05); }
+.passion-card .card-body {
+    padding: 1.2em 1.4em 1.5em;
+    flex: 1; display: flex; flex-direction: column;
+}
+.passion-card h2 { font-size: 1rem; color: var(--color-primary); margin-bottom: 0.5em; line-height: 1.4; }
+.passion-card p { font-size: 0.85rem; color: var(--color-muted); line-height: 1.58; margin-bottom: 0.8em; flex: 1; }
+.passion-card ul { list-style: none; padding: 0; margin: 0; }
+.passion-card ul li { font-size: 0.82rem; margin-bottom: 0.3em; }
+.passion-card ul li a {
+    color: var(--color-accent); text-decoration: none;
+    border-bottom: 1px dotted var(--color-accent-light);
+    transition: color 0.2s;
+}
+.passion-card ul li a:hover { color: var(--color-primary) !important; }
+
+@media (max-width: 700px) {
+    .passion-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   BLOG PAGE (gerryberry.html and future blog posts)
+   ============================================================ */
+.blog-post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+.blog-back {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-primary) !important;
+    text-decoration: none;
+    border-bottom: none !important;
+    margin-bottom: 2em;
+    transition: color 0.2s;
+}
+.blog-back:hover { color: var(--color-accent) !important; }
+
+.blog-hero {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 0 auto;
+}
+.blog-hero img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+}
+.blog-imgbody img {
+    width: 40%; height: 40%;
+    object-fit: cover; display: block;
+    margin: 0 auto;
+}
+.blog-header {
+    margin-bottom: 2em;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 1.2em;
+}
+.blog-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.25em 0.8em;
+    border-radius: 2px;
+    margin-bottom: 0.8em;
+}
+.blog-header h1 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin: 0.3em 0 0.4em;
+}
+.blog-meta {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    margin: 0;
+}
+.blog-body h2 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 0.75em;
+}
+.blog-body p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 1.2em;
+}
+.blog-links {
+    background: #faf7f4;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    padding: 1.2em 1.5em;
+    margin-top: 2.5em;
+}
+.blog-links h3 {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.9em;
+}
+.blog-links ul { list-style: none; padding: 0; margin: 0; }
+.blog-links ul li { margin-bottom: 0.5em; }
+.blog-links ul li a {
+    font-size: 0.88rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-accent-light);
+    transition: color 0.2s;
+}
+.blog-links ul li a:hover { color: var(--color-primary) !important; }
